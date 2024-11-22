@@ -1,0 +1,29 @@
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# macOS system files
+.DS_Store
+
+# IDE configuration files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js
+node_modules/
+
+# Build files
+dist/
+build/
+*.out
+*.exe
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+env/
+venv/
+.venv/

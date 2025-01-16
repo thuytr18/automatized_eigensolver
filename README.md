@@ -26,10 +26,12 @@ This project provides an implementation of an automatized eigensolver to compute
     - (As of November 22, 2024) The option DENABLE_MPI=Off does not work with the current version of the MADNESS library.
     - To ensure the project works correctly, install the MADNESS library with MPI enabled. If MPI is not installed on your system, you can install it as follows:
         - Ubuntu: 
+
         ```bash
         sudo apt install openmpi-bin libopenmpi-dev
         ```
         - MacOS:
+
         ```bash
         brew install open-mpi
         ```
@@ -45,10 +47,12 @@ This project provides an implementation of an automatized eigensolver to compute
 Before building the project, change the MADNESS library path in the `CMakeLists.txt` file to the correct path on your system. The MADNESS library path is defined in the `MADNESS_DIR` variable.
 
 1. Clone the repository:
+
     ```bash
     git clone https://git.rz.uni-augsburg.de/qalg-a/automatized_eigensolver.git
     ```
 2. Build the project:
+
     ```bash
     mkdir build_eigensolver
     cd build_eigensolver
@@ -56,6 +60,7 @@ Before building the project, change the MADNESS library path in the `CMakeLists.
     make
     ```
 3. To run the eigensolver, execute the shell script `run_eigensolver.sh`:
+
     ```bash
     ./run_eigensolver.sh
     ```
@@ -89,12 +94,15 @@ To create a GIF of the eigenfunctions for a specific potential type, make sure t
 
 ### Plotting the Results
 1. To create the .png files for the eigenfunctions, run the `run_plot_phi.sh` script with the path to the `Phi` folder as an argument. For example:
+
     ```bash
     ./run_plot_phi.sh Images/Gaussian/Gaussian_Phi/
     ```
+    
     This command will generate a `.png` file for each `.dat` file.
     
 2. After the .png files are created, you can generate a GIF by running the Python script `togif.py`:
+
     ```bash
     ./togif.py Images/Gaussian/Gaussian_Phi/
     ```

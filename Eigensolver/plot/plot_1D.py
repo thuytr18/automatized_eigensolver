@@ -32,9 +32,9 @@ if __name__ == '__main__':
         data = np.loadtxt(arg)  # load the data from the file
         x = data[:, 0]
         y = data[:, 1]
-        if(arg == 'potential.dat'):
+        if re.match(r'(.*/)?potential.dat', arg):
             plt.plot(x, y, label='V(x)')  # plot the data with label as filename
-        elif(re.match(r'Psi_\d+.dat', arg)):
+        elif re.match(r'(.*/)?Psi_\d+.dat', arg):
             energylevel = re.findall(r'\d+', arg)[0]
             plt.plot(x, y, label=r'$\Psi_{%s}$' % energylevel)  # plot the data with label as filename
         elif re.match(r'(.*/)?phi-\d+-\d+.dat', arg):
@@ -43,22 +43,22 @@ if __name__ == '__main__':
         elif re.match(r'(.*/)?phi-\d+.dat', arg):
             energylevel = re.findall(r'\d+', arg)[0]
             plt.plot(x, y, label=r'$\phi_{%s}$' % energylevel)
-        elif(arg == 'approximation.dat'):
+        elif re.match(r'(.*/)?approximation.dat', arg):
             plt.plot(x, y, label=r'$V^{H}(x)$')  # plot the data with label as filename
             # only for double well potential
-        elif arg == 'approximation1.dat':
+        elif (re.match(r'(.*/)?approximation1.dat', arg)):
             plt.plot(x, y, label=r'$V^{H}_{1}(x)$')  # plot the data with label as filename
-        elif re.match(r'PsiApprox_\d+.dat', arg):
+        elif re.match(r'(.*/)?PsiApprox_\d+.dat', arg):
             energylevel = re.findall(r'\d+', arg)[0]
             plt.plot(x, y, label=r'$\Psi_{%s}^{H}$' % energylevel)
         # only for double well potential
-        elif re.match(r'PsiApprox1_\d+.dat', arg):
+        elif re.match(r'(.*/)?PsiApprox1_\d+.dat', arg):
             match = re.search(r'(?<=_)\d+', arg)
             energylevel = match.group(0)
             plt.plot(x, y, label=r'$\Psi_{%s}^{H_{1}}$' % energylevel)
-        elif (arg == 'rho.dat'):
+        elif re.match(r'(.*/)?rho.dat', arg):
             plt.plot(x, y, label=r'$\rho(x)$')
-        elif (arg == 'charged_rho.dat'):
+        elif re.match(r'(.*/)?charged_rho.dat', arg):
             plt.plot(x, y, label=r'$\rho_{charged}(x)$')
         else:
             plt.plot(x,y, label=arg)

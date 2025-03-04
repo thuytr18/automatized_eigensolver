@@ -35,13 +35,13 @@ This project provides an implementation of an automatized eigensolver to compute
         ```bash
         brew install open-mpi
         ```
-
 - **Python Packages:**
     - The following Python packages are required to run the plotting scripts:
         - Numpy
-        - Matplotlib
+        - Matplotlib (version 3.7.1)
         - Tikzplotlib
         - natsort
+        - webcolors (version 1.12)
 
 ## Installation
 Before building the project, change the MADNESS library path in the `CMakeLists.txt` file to the correct path on your system. The MADNESS library path is defined in the `MADNESS_DIR` variable.
